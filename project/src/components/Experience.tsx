@@ -1,0 +1,198 @@
+import { useReveal } from '../hooks/useReveal';
+import { MapPin, Calendar, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+
+interface Role {
+  title: string;
+  company: string;
+  period: string;
+  location: string;
+  description: string;
+  highlights: string[];
+  logo: string;
+  current?: boolean;
+}
+
+const roles: Role[] = [
+  {
+    title: 'Research Analyst | Market Intelligence · AI Solutions GTM Strategy & Commercialization',
+    company: 'Indium Software (Strategy Office)',
+    period: 'July 2024 — Present',
+    location: 'Chennai, India',
+    logo: '/logos/indium.png',
+    current: true,
+    description:
+      'Leading market intelligence and AI commercialization initiatives that shape strategic growth for Data & AI offerings and enterprise opportunities.',
+    highlights: [
+      'Built monthly market intelligence and competitive insights for 50+ stakeholders, helping identify growth opportunities across 20+ target accounts.',
+      'Developed a 5,000+ prospect database using ZoomInfo, Apollo.io, and Lusha to support targeted outreach and account penetration.',
+      'Drove GTM performance reviews across 100+ Data & AI projects and created 30-60-90-day growth plans for service-line expansion.',
+      'Supported enterprise AI pre-sales and RFP responses while contributing to AI thought leadership through whitepapers, blogs, and conference support.',
+    ],
+  },
+  {
+    title: 'Senior Business Development Associate',
+    company: "BYJU'S (Think & Learn Pvt. Ltd.)",
+    period: 'June 2019 — May 2021',
+    location: 'Bangalore, India',
+    logo: '/logos/byjus.png',
+    description:
+      'Strengthened client relationships and supported sales execution through market analysis, CRM tracking, and promotional enablement.',
+    highlights: [
+      'Built client relationships that expanded market reach and improved customer engagement.',
+      'Created sales and promotional materials in collaboration with marketing teams.',
+      'Analyzed market trends and consumer behaviour to support business decisions.',
+      'Managed leads in LeadSquared CRM and tracked engagement through the sales cycle.',
+    ],
+  },
+];
+
+export default function Experience() {
+  const sectionRef = useReveal();
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleCard = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  return (
+    <section id="experience" className="py-24 lg:py-32 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div ref={sectionRef} className="section-reveal">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 text-sky-400 text-xs font-semibold tracking-widest uppercase mb-4">
+              <span className="w-8 h-px bg-sky-400" />
+              Work Experience
+              <span className="w-8 h-px bg-sky-400" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white">Career Journey</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            {roles.map((role, index) => {
+              const isExpanded = expandedIndex === index;
+
+              return (
+                <div
+                  key={role.company + role.period}
+                  className={`group glass rounded-2xl border overflow-hidden transform transition-all duration-500 ease-out ${
+                    isExpanded
+                      ? 'border-sky-400/30 -translate-y-2 scale-[1.02] shadow-[0_18px_45px_rgba(14,165,233,0.16)]'
+                      : 'border-sky-500/10 hover:-translate-y-3 hover:scale-[1.03] hover:border-sky-400/30 hover:shadow-[0_20px_50px_rgba(14,165,233,0.18)]'
+                  }`}
+                >
+                  <div
+                    className="p-5 md:p-6 cursor-pointer"
+                    onClick={() => toggleCard(index)}
+                  >
+                    <div className="flex items-start gap-5">
+                      <div className="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center flex-shrink-0 transition-all duration-500 group-hover:scale-105">
+                        <img
+                          src={role.logo}
+                          alt={`${role.company} logo`}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+
+                      <div className="flex-1 min-w-0 pt-1">
+                        <div className="flex items-start justify-between gap-3 mb-2">
+                          <div>
+                            <h3 className="text-sm md:text-base font-semibold text-white leading-snug mb-1 transition-colors duration-300 group-hover:text-sky-100">
+                              {role.title}
+                            </h3>
+                            <p className="text-sm text-sky-400 font-medium">{role.company}</p>
+                          </div>
+
+                          {role.current && (
+                            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-semibold bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.3)] flex-shrink-0">
+                              Current
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                            <Calendar size={12} />
+                            {role.period}
+                          </div>
+                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                            <MapPin size={12} />
+                            {role.location}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-5 pt-4 border-t border-white/5 flex justify-end">
+                      <button
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
+                          isExpanded
+                            ? 'text-sky-400 bg-sky-500/10 border border-sky-500/25'
+                            : 'text-slate-400 hover:text-sky-400 hover:bg-sky-500/5 border border-transparent hover:border-sky-500/15'
+                        }`}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          toggleCard(index);
+                        }}
+                      >
+                        {isExpanded ? 'Hide Details' : 'View My Work'}
+                        <ChevronDown
+                          size={14}
+                          className={`transition-transform duration-300 ${
+                            isExpanded ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                      isExpanded ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-5 md:px-6 pb-5 md:pb-6 pt-0">
+                      <div className="h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent mb-5" />
+
+                      <p className="text-sm text-slate-400 mb-4 leading-relaxed">
+                        {role.description}
+                      </p>
+
+                      <ul className="space-y-2.5">
+                        {role.highlights.map((highlight, j) => (
+                          <li
+                            key={j}
+                            className="flex items-start gap-2.5 text-sm text-slate-400 leading-relaxed"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0 mt-2" />
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="mt-5 pt-4 border-t border-white/5 flex justify-end">
+                        <button
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-sky-400 bg-sky-500/10 border border-sky-500/25 transition-all duration-300"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleCard(index);
+                          }}
+                        >
+                          Hide Details
+                          <ChevronDown
+                            size={14}
+                            className="transition-transform duration-300 rotate-180"
+                          />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
