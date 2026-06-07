@@ -1,4 +1,5 @@
 import { useReveal } from '../hooks/useReveal';
+import { useEffect, useState } from 'react';
 import { Target, TrendingUp, Users, Lightbulb } from 'lucide-react';
 
 const traits = [
@@ -26,22 +27,35 @@ const traits = [
 
 export default function About() {
   const sectionRef = useReveal();
+  const [activeBox, setActiveBox] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveBox((prev) => (prev + 1) % traits.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section id="about" className="py-24 lg:py-32 relative">
+    <section id="about" className="py-24 lg:py-32 relative" style={{ backgroundColor: '#000000' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div ref={sectionRef} className="section-reveal">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 text-sky-400 text-xs font-semibold tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-sky-400" />
+              <div
+                className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase mb-4"
+                style={{ color: '#f97316' }}
+              >
+                <span className="w-8 h-px" style={{ backgroundColor: '#f97316' }} />
                 About Me
               </div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-                Bridging AI Innovation
+
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+                <span className="text-white">Bridging AI Innovation</span>
                 <br />
-                <span className="text-gradient">with Market Reality</span>
+                <span style={{ color: '#f97316' }}>with Market Reality</span>
               </h2>
+
               <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
                   I'm a GTM strategist and research analyst specializing in enterprise AI adoption,
@@ -71,7 +85,12 @@ export default function About() {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1.5 rounded-full text-xs font-medium text-slate-300 glass border border-white/8"
+                    className="px-3 py-1.5 rounded-full text-xs font-medium"
+                    style={{
+                      color: '#9ca3af',
+                      backgroundColor: '#1f1f1f',
+                      border: '1px solid #374151',
+                    }}
                   >
                     {tag}
                   </span>
@@ -82,17 +101,69 @@ export default function About() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {traits.map((trait, i) => {
                 const Icon = trait.icon;
+                const isActive = activeBox === i;
                 return (
                   <div
                     key={trait.title}
-                    className="glass rounded-xl p-5 card-hover"
-                    style={{ animationDelay: `${i * 100}ms` }}
+                    className="trait-card rounded-xl p-5"
+                    style={{
+                      background: isActive
+                        ? 'rgba(251, 146, 60, 0.22)'
+                        : 'rgba(251, 146, 60, 0.08)',
+                      border: isActive
+                        ? '1px solid rgba(251, 146, 60, 0.65)'
+                        : '1px solid rgba(251, 146, 60, 0.2)',
+                      boxShadow: isActive
+                        ? '0 20px 45px rgba(251, 146, 60, 0.25), 0 0 0 1px rgba(251, 146, 60, 0.15), inset 0 1px 0 rgba(255,255,255,0.06)'
+                        : 'none',
+                      transform: isActive ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
+                      transition: 'all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      cursor: 'default',
+                    }}
                   >
-                    <div className="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4">
-                      <Icon size={18} className="text-sky-400" />
+                    {isActive && (
+                      <div
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          background:
+                            'radial-gradient(circle at 50% 0%, rgba(251, 146, 60, 0.22) 0%, transparent 70%)',
+                          pointerEvents: 'none',
+                        }}
+                      />
+                    )}
+
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center mb-4"
+                      style={{
+                        background: isActive
+                          ? 'rgba(251, 146, 60, 0.32)'
+                          : 'rgba(251, 146, 60, 0.15)',
+                        border: isActive
+                          ? '1px solid rgba(251, 146, 60, 0.55)'
+                          : '1px solid rgba(251, 146, 60, 0.3)',
+                        boxShadow: isActive ? '0 0 18px rgba(251, 146, 60, 0.45)' : 'none',
+                        transform: isActive ? 'scale(1.15) rotate(6deg)' : 'scale(1) rotate(0deg)',
+                        transition: 'all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1)',
+                      }}
+                    >
+                      <Icon size={20} className="text-white" />
                     </div>
-                    <h3 className="text-sm font-semibold text-white mb-2">{trait.title}</h3>
-                    <p className="text-xs text-slate-400 leading-relaxed">{trait.desc}</p>
+
+                    <h3
+                      className="text-base font-semibold mb-2 transition-colors duration-300"
+                      style={{ color: isActive ? '#ffffff' : '#e2e8f0' }}
+                    >
+                      {trait.title}
+                    </h3>
+                    <p
+                      className="text-sm leading-relaxed transition-colors duration-300"
+                      style={{ color: isActive ? '#cbd5e1' : '#94a3b8' }}
+                    >
+                      {trait.desc}
+                    </p>
                   </div>
                 );
               })}
@@ -100,6 +171,15 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .trait-card:hover {
+          background: rgba(251, 146, 60, 0.22) !important;
+          border-color: rgba(251, 146, 60, 0.65) !important;
+          box-shadow: 0 20px 45px rgba(251, 146, 60, 0.25), 0 0 0 1px rgba(251, 146, 60, 0.15), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+          transform: translateY(-8px) scale(1.02) !important;
+        }
+      `}</style>
     </section>
   );
 }
