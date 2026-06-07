@@ -13,11 +13,27 @@ const navLinks = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 40);
+    const handler = () => {
+      setScrolled(window.scrollY > 40);
+
+      const heroSection = document.querySelector('#hero');
+      if (heroSection) {
+        const heroTop = heroSection.getBoundingClientRect().top;
+        setShowNav(heroTop <= 80);
+      }
+    };
+
+    handler();
     window.addEventListener('scroll', handler, { passive: true });
-    return () => window.removeEventListener('scroll', handler);
+    window.addEventListener('resize', handler);
+
+    return () => {
+      window.removeEventListener('scroll', handler);
+      window.removeEventListener('resize', handler);
+    };
   }, []);
 
   const handleNav = (href: string) => {
@@ -29,6 +45,8 @@ export default function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        showNav ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'
+      } ${
         scrolled ? 'glass-strong shadow-lg shadow-navy-950/50' : 'bg-transparent'
       }`}
     >
@@ -36,7 +54,10 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <a
             href="#hero"
-            onClick={(e) => { e.preventDefault(); handleNav('#hero'); }}
+            onClick={(e) => {
+              e.preventDefault();
+              handleNav('#hero');
+            }}
             className="text-base font-semibold tracking-wide text-gradient hover:opacity-80 transition-opacity"
           >
             AI GTM Strategist
@@ -95,7 +116,7 @@ export default function Navigation() {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-600/30 text-blue-400 text-sm font-medium hover:bg-blue-600/20 transition-all"
+                className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600/10 border border-blue-600/30 text-blue-400 text-sm font-medium hover:bg-blue-600/20 transition-all duration-200"
               >
                 <Linkedin size={14} />
                 LinkedIn
