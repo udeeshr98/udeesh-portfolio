@@ -56,14 +56,14 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-24 lg:py-32 relative">
+    <section id="experience" className="py-24 lg:py-32 relative" style={{ backgroundColor: '#000000' }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div ref={sectionRef} className="section-reveal">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 text-sky-400 text-xs font-semibold tracking-widest uppercase mb-4">
-              <span className="w-8 h-px bg-sky-400" />
+            <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#F97316' }}>
+              <span className="w-8 h-px" style={{ backgroundColor: '#F97316' }} />
               Work Experience
-              <span className="w-8 h-px bg-sky-400" />
+              <span className="w-8 h-px" style={{ backgroundColor: '#F97316' }} />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">Career Journey</h2>
           </div>
@@ -75,18 +75,21 @@ export default function Experience() {
               return (
                 <div
                   key={role.company + role.period}
-                  className={`group glass rounded-2xl border overflow-hidden transform transition-all duration-500 ease-out ${
+                  className={`group rounded-2xl border overflow-hidden transform transition-all duration-500 ease-out ${
                     isExpanded
-                      ? 'border-sky-400/30 -translate-y-2 scale-[1.02] shadow-[0_18px_45px_rgba(14,165,233,0.16)]'
-                      : 'border-sky-500/10 hover:-translate-y-3 hover:scale-[1.03] hover:border-sky-400/30 hover:shadow-[0_20px_50px_rgba(14,165,233,0.18)]'
+                      ? 'border-orange-500/30 -translate-y-2 scale-[1.02] shadow-[0_22px_50px_rgba(249,115,22,0.18)]'
+                      : 'border-orange-500/15 hover:-translate-y-3 hover:scale-[1.04] hover:border-orange-500/35 hover:shadow-[0_24px_60px_rgba(249,115,22,0.2)]'
                   }`}
+                  style={{
+                    background: 'linear-gradient(135deg, #7c2d12 0%, #431407 48%, #000000 100%)',
+                    boxShadow: isExpanded
+                      ? '0 18px 45px rgba(249,115,22,0.14)'
+                      : '0 10px 30px rgba(0,0,0,0.35)',
+                  }}
                 >
-                  <div
-                    className="p-5 md:p-6 cursor-pointer"
-                    onClick={() => toggleCard(index)}
-                  >
+                  <div className="p-5 md:p-6 cursor-pointer" onClick={() => toggleCard(index)}>
                     <div className="flex items-start gap-5">
-                      <div className="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center flex-shrink-0 transition-all duration-500 group-hover:scale-105">
+                      <div className="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center flex-shrink-0 transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_0_20px_rgba(249,115,22,0.2)]">
                         <img
                           src={role.logo}
                           alt={`${role.company} logo`}
@@ -97,10 +100,10 @@ export default function Experience() {
                       <div className="flex-1 min-w-0 pt-1">
                         <div className="flex items-start justify-between gap-3 mb-2">
                           <div>
-                            <h3 className="text-sm md:text-base font-semibold text-white leading-snug mb-1 transition-colors duration-300 group-hover:text-sky-100">
+                            <h3 className="text-sm md:text-base font-semibold text-white leading-snug mb-1 transition-colors duration-300 group-hover:text-orange-100">
                               {role.title}
                             </h3>
-                            <p className="text-sm text-sky-400 font-medium">{role.company}</p>
+                            <p className="text-sm text-orange-300 font-medium">{role.company}</p>
                           </div>
 
                           {role.current && (
@@ -111,11 +114,11 @@ export default function Experience() {
                         </div>
 
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-2">
-                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-300/70">
                             <Calendar size={12} />
                             {role.period}
                           </div>
-                          <div className="flex items-center gap-1.5 text-xs text-slate-500">
+                          <div className="flex items-center gap-1.5 text-xs text-slate-300/70">
                             <MapPin size={12} />
                             {role.location}
                           </div>
@@ -123,12 +126,12 @@ export default function Experience() {
                       </div>
                     </div>
 
-                    <div className="mt-5 pt-4 border-t border-white/5 flex justify-end">
+                    <div className="mt-5 pt-4 border-t border-white/10 flex justify-end">
                       <button
                         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
                           isExpanded
-                            ? 'text-sky-400 bg-sky-500/10 border border-sky-500/25'
-                            : 'text-slate-400 hover:text-sky-400 hover:bg-sky-500/5 border border-transparent hover:border-sky-500/15'
+                            ? 'text-orange-300 bg-orange-500/10 border border-orange-500/25'
+                            : 'text-orange-300 hover:text-orange-200 hover:bg-orange-500/10 border border-transparent hover:border-orange-500/20'
                         }`}
                         onClick={(e) => {
                           e.stopPropagation();
@@ -152,9 +155,9 @@ export default function Experience() {
                     }`}
                   >
                     <div className="px-5 md:px-6 pb-5 md:pb-6 pt-0">
-                      <div className="h-px bg-gradient-to-r from-transparent via-sky-500/20 to-transparent mb-5" />
+                      <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-5" />
 
-                      <p className="text-sm text-slate-400 mb-4 leading-relaxed">
+                      <p className="text-sm text-slate-300 leading-relaxed mb-4">
                         {role.description}
                       </p>
 
@@ -162,17 +165,17 @@ export default function Experience() {
                         {role.highlights.map((highlight, j) => (
                           <li
                             key={j}
-                            className="flex items-start gap-2.5 text-sm text-slate-400 leading-relaxed"
+                            className="flex items-start gap-2.5 text-sm text-slate-300 leading-relaxed"
                           >
-                            <span className="w-1.5 h-1.5 rounded-full bg-sky-400 flex-shrink-0 mt-2" />
+                            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 flex-shrink-0 mt-2" />
                             {highlight}
                           </li>
                         ))}
                       </ul>
 
-                      <div className="mt-5 pt-4 border-t border-white/5 flex justify-end">
+                      <div className="mt-5 pt-4 border-t border-white/10 flex justify-end">
                         <button
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-sky-400 bg-sky-500/10 border border-sky-500/25 transition-all duration-300"
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-orange-300 bg-orange-500/10 border border-orange-500/25 transition-all duration-300 hover:bg-orange-500/15 hover:text-orange-200"
                           onClick={(e) => {
                             e.stopPropagation();
                             toggleCard(index);
