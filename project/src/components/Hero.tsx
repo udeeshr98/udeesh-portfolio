@@ -31,7 +31,7 @@ export default function Hero() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen overflow-hidden bg-navy-950 pt-32 lg:pt-0"
+      className="relative min-h-screen overflow-hidden bg-black pt-32 lg:pt-0"
     >
       <div
         className="absolute inset-0 bg-grid-pattern bg-grid opacity-50"
@@ -39,8 +39,8 @@ export default function Hero() {
       />
 
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full bg-sky-500/5 blur-[200px]" />
-        <div className="absolute bottom-0 right-0 w-[900px] h-[900px] rounded-full bg-blue-600/3 blur-[180px]" />
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full bg-orange-500/10 blur-[220px]" />
+        <div className="absolute bottom-0 right-0 w-[900px] h-[900px] rounded-full bg-orange-600/5 blur-[180px]" />
       </div>
 
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy-950/50 pointer-events-none" />
@@ -49,7 +49,7 @@ export default function Hero() {
         <div
           className="text-[18vw] md:text-[24vw] lg:text-[26vw] font-black text-white leading-none whitespace-nowrap select-none"
           style={{
-            opacity: 0.1,
+            opacity: 0.22,
             letterSpacing: '-0.04em',
             textShadow: '0 0 80px rgba(56, 189, 248, 0.12)',
             transform: `scale(${1 + mousePos.x * 0.02})`,
@@ -68,7 +68,7 @@ export default function Hero() {
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-3">
                   AI GTM Strategist
                 </h1>
-                <p className="text-sky-400 text-sm md:text-base font-semibold mb-4">
+                <p className="text-orange-400 text-sm md:text-base font-semibold mb-4">
                   Research Analyst · Market Intelligence · GTM Strategy · AI Solutions
                 </p>
               </div>
@@ -90,21 +90,21 @@ export default function Hero() {
               >
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full glass border border-sky-500/20 flex items-center justify-center text-sky-400 hover:bg-sky-500/10 hover:border-sky-400/40 transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full glass border border-sky-500/20 flex items-center justify-center text-sky-400 hover:bg-sky-500/10 hover:border-sky-400/40 transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
                   aria-label="Email"
                 >
                   <Mail size={18} />
                 </a>
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full glass border border-sky-500/20 flex items-center justify-center text-sky-400 hover:bg-sky-500/10 hover:border-sky-400/40 transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
                   aria-label="Resume"
                 >
                   <Download size={18} />
@@ -151,7 +151,7 @@ export default function Hero() {
 
               <a
                 href="#about"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-white font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-sky-500/40 hover:-translate-y-1 w-fit"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-400 text-white font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-1 w-fit"
                 style={{ animation: 'fadeUp 0.8s ease-out 0.5s both' }}
               >
                 Explore My Work
@@ -168,7 +168,7 @@ export default function Hero() {
       >
         <button
           onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-          className="text-slate-500 hover:text-sky-400 transition-colors p-2"
+          className="text-slate-500 hover:text-orange-400 transition-colors p-2"
           aria-label="Scroll down"
         >
           <ArrowDown size={20} className="animate-bounce" />
