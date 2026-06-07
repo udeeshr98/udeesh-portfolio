@@ -13,8 +13,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-navy-950 text-slate-200">
       <IntroVideo />
-      <Navigation />
+
       <main>
+        <Navigation />
         <Hero />
         <About />
         <Skills />
@@ -23,6 +24,7 @@ export default function App() {
         <Education />
         <Contact />
       </main>
+
       <Footer />
     </div>
   );
