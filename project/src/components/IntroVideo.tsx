@@ -1,4 +1,4 @@
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function IntroVideo() {
   return (
@@ -9,7 +9,7 @@ export default function IntroVideo() {
       <div className="absolute inset-0">
         <img
           src="https://dynamic.heygen.ai/aws_pacific/avatar_tmp/85e07de6360643749b822187752897c1/va86f7257aa1a493880ba2130f63bc7a1/67fd0c5504974a01b8e9066761c18a69.jpeg"
-          alt="Udeesh AI Portfolio Hero Video"
+          alt="Udeesh AI Portfolio Hero Background"
           className="w-full h-full object-cover opacity-40 scale-105"
         />
         <div className="absolute inset-0 bg-black/65" />
@@ -44,34 +44,20 @@ export default function IntroVideo() {
             competitive strategy, and enterprise go-to-market execution.
           </p>
 
-          <a
-            href="https://app.heygen.com/videos/udeesh-ai-portfolio-hero-video-67fd0c5504974a01b8e9066761c18a69"
-            target="_blank"
-            rel="noopener noreferrer"
+          <div
             className="group relative w-full max-w-4xl rounded-[28px] overflow-hidden border border-orange-400/20 shadow-[0_0_60px_rgba(249,115,22,0.16)] animate-fadeUp"
             style={{ animationDelay: '0.3s' }}
-            aria-label="Open portfolio introduction video"
           >
-            <img
-              src="https://dynamic.heygen.ai/aws_pacific/avatar_tmp/85e07de6360643749b822187752897c1/va86f7257aa1a493880ba2130f63bc7a1/67fd0c5504974a01b8e9066761c18a69.jpeg"
-              alt="Udeesh AI Portfolio Hero Video Thumbnail"
-              className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-orange-500/90 border border-orange-200/30 flex items-center justify-center shadow-[0_0_40px_rgba(249,115,22,0.35)] transition-transform duration-300 group-hover:scale-110 group-hover:bg-orange-400">
-                <Play size={30} className="text-white ml-1" fill="currentColor" />
-              </div>
-            </div>
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-left">
-              <div className="text-white text-xl md:text-2xl font-bold mb-2">
-                Udeesh AI Portfolio Hero Video
-              </div>
-              <div className="text-slate-200 text-sm md:text-base max-w-2xl">
-                Click to watch the full introduction video in a new tab.
-              </div>
-            </div>
-          </a>
+            <video
+              className="w-full aspect-video object-cover bg-black"
+              controls
+              playsInline
+              preload="metadata"
+            >
+              <source src="/videos/udeesh-intro.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
 
           <button
             onClick={() => document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' })}
