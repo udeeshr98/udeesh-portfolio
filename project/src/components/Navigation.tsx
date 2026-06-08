@@ -37,7 +37,7 @@ export default function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-black/90 border-b border-orange-500/15 backdrop-blur-md shadow-[0_2px_24px_rgba(249,115,22,0.08)]'
           : 'bg-black/70 backdrop-blur-sm'
