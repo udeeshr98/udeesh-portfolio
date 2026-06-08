@@ -1,5 +1,6 @@
+import { useEffect, useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
-import { GraduationCap, Award, BookOpen, Calendar, Zap, Medal, Trophy } from 'lucide-react';
+import { GraduationCap, Award, Calendar, Zap, Medal, Trophy, ChevronDown } from 'lucide-react';
 import type { ComponentType } from 'react';
 
 const education = [
@@ -20,12 +21,36 @@ const education = [
 ];
 
 const certifications = [
-  { name: 'AWS Certified AI Practitioner', issuer: 'Amazon Web Services', year: '2024' },
-  { name: 'Product Marketing Alliance Core', issuer: 'PMA', year: '2023' },
-  { name: 'CFA Level I', issuer: 'CFA Institute', year: '2021' },
-  { name: 'Google Analytics Certified', issuer: 'Google', year: '2023' },
-  { name: 'Pragmatic Marketing Certified', issuer: 'Pragmatic Institute', year: '2022' },
-  { name: 'LangChain AI Developer', issuer: 'LangChain Academy', year: '2024' },
+  {
+    name: 'AWS Certified AI Practitioner',
+    issuer: 'Amazon Web Services',
+    details: 'Learning description will be added here later.',
+  },
+  {
+    name: 'Product Marketing Alliance Core',
+    issuer: 'PMA',
+    details: 'Learning description will be added here later.',
+  },
+  {
+    name: 'CFA Level I',
+    issuer: 'CFA Institute',
+    details: 'Learning description will be added here later.',
+  },
+  {
+    name: 'Google Analytics Certified',
+    issuer: 'Google',
+    details: 'Learning description will be added here later.',
+  },
+  {
+    name: 'Pragmatic Marketing Certified',
+    issuer: 'Pragmatic Institute',
+    details: 'Learning description will be added here later.',
+  },
+  {
+    name: 'LangChain AI Developer',
+    issuer: 'LangChain Academy',
+    details: 'Learning description will be added here later.',
+  },
 ];
 
 interface Achievement {
@@ -33,7 +58,6 @@ interface Achievement {
   metric: string;
   label: string;
   context: string;
-  color: string;
 }
 
 const achievements: Achievement[] = [
@@ -42,68 +66,77 @@ const achievements: Achievement[] = [
     metric: 'Rise & Shine',
     label: 'Award',
     context: 'Excellence in GTM Strategy & Project Management at Indium Software',
-    color: 'from-sky-400/20 to-sky-600/5',
   },
   {
     icon: Zap,
     metric: 'Agility in Action',
     label: 'Recognition',
     context: 'Recognized for adaptability across strategic functions at Indium Software.',
-    color: 'from-blue-400/20 to-blue-600/5',
-  },
-  {
-    icon: Medal,
-    metric: 'Gold Medalist',
-    label: 'MBA Excellence',
-    context: 'Gold Medalist in MBA from SRM University',
-    color: 'from-cyan-400/20 to-cyan-600/5',
   },
   {
     icon: Award,
     metric: 'Best BDA',
     label: 'Award',
     context: 'Recognized for generating ₹60 Lakhs in revenue at BYJU’S',
-    color: 'from-sky-300/20 to-sky-500/5',
+  },
+  {
+    icon: Medal,
+    metric: 'Gold Medalist',
+    label: 'MBA Excellence',
+    context: 'Gold Medalist in MBA from SRM University',
   },
 ];
 
 export default function Education() {
   const sectionRef = useReveal();
+  const [activeAward, setActiveAward] = useState(0);
+  const [openCert, setOpenCert] = useState<number | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveAward((prev) => (prev + 1) % achievements.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const activeItem = achievements[activeAward];
+  const ActiveIcon = activeItem.icon;
 
   return (
-    <section id="education" className="py-24 lg:py-32 relative">
+    <section id="education" className="py-24 lg:py-32 relative bg-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div ref={sectionRef} className="section-reveal">
           {/* Education */}
           <div className="mb-20">
             <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-sky-400 text-xs font-semibold tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-sky-400" />
+              <div className="inline-flex items-center gap-2 text-orange-400 text-xs font-semibold tracking-widest uppercase mb-4">
+                <span className="w-8 h-px bg-orange-400" />
                 Education
-                <span className="w-8 h-px bg-sky-400" />
+                <span className="w-8 h-px bg-orange-400" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white">Academic Background</h2>
             </div>
 
             <div className="max-w-4xl mx-auto relative">
-              <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-sky-400/60 via-sky-500/20 to-transparent" />
+              <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-orange-400/60 via-orange-500/20 to-transparent" />
 
               <div className="space-y-10">
                 {education.map((edu) => (
                   <div key={edu.degree} className="relative pl-16">
                     <div className="absolute left-0 top-5 flex items-center justify-center">
-                      <div className="relative flex h-10 w-10 items-center justify-center rounded-full border border-sky-400/30 bg-sky-500/10 shadow-[0_0_20px_rgba(14,165,233,0.25)] backdrop-blur-sm">
-                        <GraduationCap size={18} className="text-sky-400" />
+                      <div className="relative flex h-10 w-10 items-center justify-center rounded-full border border-orange-400/30 bg-orange-500/10 shadow-[0_0_20px_rgba(249,115,22,0.28)] backdrop-blur-sm">
+                        <GraduationCap size={18} className="text-orange-300" />
                       </div>
                     </div>
 
-                    <div className="glass rounded-2xl p-7 card-hover border border-sky-500/10">
+                    <div className="rounded-2xl p-7 border border-orange-500/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02))] shadow-[0_0_30px_rgba(249,115,22,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_38px_rgba(249,115,22,0.12)]">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                         <div>
                           <h3 className="text-lg md:text-xl font-semibold text-white mb-1">
                             {edu.degree}
                           </h3>
-                          <p className="text-sky-400 text-sm font-medium">{edu.institution}</p>
+                          <p className="text-orange-300 text-sm font-medium">{edu.institution}</p>
                         </div>
 
                         <div className="flex flex-wrap items-center gap-2 md:justify-end">
@@ -111,15 +144,15 @@ export default function Education() {
                             <Calendar size={12} />
                             {edu.year}
                           </span>
-                          <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-sky-500/10 border border-sky-500/20 text-sky-300">
+                          <span className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-orange-500/10 border border-orange-500/20 text-orange-200">
                             {edu.cgpa}
                           </span>
                         </div>
                       </div>
 
                       <div className="mt-5 pt-4 border-t border-white/5">
-                        <div className="inline-flex items-start gap-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 px-4 py-3 text-sm text-emerald-300">
-                          <Award size={16} className="mt-0.5 flex-shrink-0" />
+                        <div className="inline-flex items-start gap-2.5 rounded-xl bg-orange-500/10 border border-orange-400/20 px-4 py-3 text-sm text-orange-200">
+                          <Award size={16} className="mt-0.5 flex-shrink-0 text-orange-300" />
                           <span>{edu.honors}</span>
                         </div>
                       </div>
@@ -133,39 +166,109 @@ export default function Education() {
           {/* Awards */}
           <div className="mb-20">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center gap-2 text-sky-400 text-xs font-semibold tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-sky-400" />
+              <div className="inline-flex items-center gap-2 text-orange-400 text-xs font-semibold tracking-widest uppercase mb-4">
+                <span className="w-8 h-px bg-orange-400" />
                 Awards &amp; Recognition
-                <span className="w-8 h-px bg-sky-400" />
+                <span className="w-8 h-px bg-orange-400" />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-white">
                 Industry Recognition
               </h2>
               <p className="text-slate-400 mt-3 max-w-xl mx-auto">
-                A selection of awards and recognition that reflect leadership, adaptability, and impact across career stages.
+                A selection of awards and recognition that reflect leadership, adaptability, and impact across my career stages.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {achievements.map((item) => {
-                const Icon = item.icon;
+            <div className="rounded-[32px] border border-orange-500/10 bg-black px-6 py-10 md:px-10 lg:px-12 overflow-hidden">
+              <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-12 items-center">
+                <div className="flex items-center justify-center">
+                  <img
+                    src="/logos/awards.png"
+                    alt="Awards visual"
+                    className="w-[380px] md:w-[500px] lg:w-[620px] max-w-full object-contain drop-shadow-[0_0_70px_rgba(249,115,22,0.14)]"
+                  />
+                </div>
+
+                <div className="relative min-h-[320px] flex items-center justify-center">
+                  <div
+                    key={activeAward}
+                    className="w-full max-w-[360px] rounded-[28px] border border-orange-300/20 bg-[rgba(255,255,255,0.06)] backdrop-blur-xl px-6 py-6 shadow-[0_0_40px_rgba(249,115,22,0.14)] animate-awardFade"
+                  >
+                    <div className="w-11 h-11 rounded-2xl bg-orange-500/15 border border-orange-300/20 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(249,115,22,0.12)]">
+                      <ActiveIcon size={18} className="text-orange-300" />
+                    </div>
+
+                    <div className="text-2xl font-bold text-white leading-tight mb-1">
+                      {activeItem.metric}
+                    </div>
+                    <div className="text-sm font-semibold text-orange-200/90 mb-3">
+                      {activeItem.label}
+                    </div>
+                    <p className="text-sm text-slate-200/75 leading-relaxed">
+                      {activeItem.context}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Certifications */}
+          <div>
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-orange-400 text-xs font-semibold tracking-widest uppercase mb-4">
+                <span className="w-8 h-px bg-orange-400" />
+                Certifications
+                <span className="w-8 h-px bg-orange-400" />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white">Professional Certifications</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+              {certifications.map((cert, index) => {
+                const isOpen = openCert === index;
+
                 return (
                   <div
-                    key={item.label + item.metric}
-                    className="relative glass rounded-2xl p-6 md:p-8 card-hover overflow-hidden group"
+                    key={cert.name}
+                    className="rounded-2xl border border-orange-500/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02))] shadow-[0_0_28px_rgba(249,115,22,0.07)] backdrop-blur-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_38px_rgba(249,115,22,0.12)]"
                   >
+                    <div className="p-5">
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-orange-500 text-white text-sm font-bold flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.18)] flex-shrink-0">
+                          {index + 1}
+                        </div>
+
+                        <div className="min-w-0">
+                          <h3 className="text-sm md:text-base font-semibold text-white leading-tight">
+                            {cert.name}
+                          </h3>
+                          <p className="text-sm text-orange-300 mt-1">{cert.issuer}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button
+                      type="button"
+                      onClick={() => setOpenCert(isOpen ? null : index)}
+                      className="w-full border-t border-orange-500/10 px-5 py-3 flex items-center justify-center text-orange-200 hover:bg-orange-500/5 transition-colors duration-300"
+                    >
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none`}
-                    />
-                    <div className="relative z-10">
-                      <div className="w-10 h-10 rounded-xl bg-sky-500/10 border border-sky-500/15 flex items-center justify-center mb-4">
-                        <Icon size={18} className="text-sky-400" />
+                      className={`grid transition-all duration-300 ease-in-out ${
+                        isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="px-5 pb-5 pt-1 text-sm text-slate-300 leading-relaxed border-t border-orange-500/10">
+                          {cert.details}
+                        </div>
                       </div>
-                      <div className="text-xl md:text-2xl font-bold text-gradient mb-1">
-                        {item.metric}
-                      </div>
-                      <div className="text-sm font-semibold text-white mb-2">{item.label}</div>
-                      <p className="text-xs text-slate-500 leading-relaxed">{item.context}</p>
                     </div>
                   </div>
                 );
@@ -173,32 +276,22 @@ export default function Education() {
             </div>
           </div>
 
-          {/* Certifications */}
-          <div>
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-sky-400 text-xs font-semibold tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-sky-400" />
-                Certifications
-                <span className="w-8 h-px bg-sky-400" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Professional Certifications</h2>
-            </div>
+          <style>{`
+            @keyframes awardFade {
+              0% {
+                opacity: 0;
+                transform: translateY(16px) scale(0.98);
+              }
+              100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+              }
+            }
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-              {certifications.map((cert) => (
-                <div key={cert.name} className="glass rounded-xl p-5 card-hover flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-sky-500/10 border border-sky-500/15 flex items-center justify-center flex-shrink-0">
-                    <BookOpen size={14} className="text-sky-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-white leading-tight">{cert.name}</h3>
-                    <p className="text-xs text-sky-400 mt-0.5">{cert.issuer}</p>
-                    <p className="text-xs text-slate-500 mt-0.5">{cert.year}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+            .animate-awardFade {
+              animation: awardFade 0.6s ease-out;
+            }
+          `}</style>
         </div>
       </div>
     </section>
