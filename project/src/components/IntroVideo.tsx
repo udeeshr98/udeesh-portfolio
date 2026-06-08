@@ -1,7 +1,10 @@
 import { ArrowRight } from 'lucide-react';
 
+interface IntroVideoProps {
+  onEnter: () => void;
+}
 
-export default function IntroVideo() {
+export default function IntroVideo({ onEnter }: IntroVideoProps) {
   return (
     <section
       id="intro-video"
@@ -18,10 +21,9 @@ export default function IntroVideo() {
           Your browser does not support the video tag.
         </video>
 
-
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <button
-            onClick={() => document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={onEnter}
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-orange-500 hover:bg-orange-400 text-white font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-1"
           >
             To Know Me
