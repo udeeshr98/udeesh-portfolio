@@ -32,8 +32,7 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen overflow-hidden bg-black"
     >
-
-      {/* ── FULL BACKGROUND VIDEO ── */}
+      {/* FULL BACKGROUND VIDEO */}
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover object-center"
@@ -44,13 +43,11 @@ export default function Hero() {
         >
           <source src="/videos/uddu-video1.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay so text is readable over video */}
         <div className="absolute inset-0 bg-black/60" />
-        {/* Bottom fade to black */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent" />
       </div>
 
-      {/* ── UDEESH background text ── */}
+      {/* UDEESH BACKGROUND TEXT */}
       <div className="absolute top-0 left-0 right-0 overflow-visible pointer-events-none h-1/2 flex items-start justify-center pt-4 lg:pt-8 z-10">
         <div
           className="text-[18vw] md:text-[24vw] lg:text-[26vw] font-black text-white leading-none whitespace-nowrap select-none"
@@ -65,14 +62,17 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── MAIN CONTENT ── */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex items-center">
+      {/* MAIN CONTENT */}
+      <div className="relative z-20 w-full min-h-screen flex items-center px-6 md:px-10 lg:px-20 xl:px-28">
         <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center pt-24 lg:pt-48">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center pt-24 lg:pt-20">
 
-            {/* Left — Title + description + icons */}
-            <div className="flex flex-col justify-center space-y-6">
-              <div style={{ animation: 'fadeUp 0.8s ease-out 0.3s both' }}>
+            {/* Left side */}
+            <div
+              className="flex flex-col justify-center space-y-6 max-w-xl lg:justify-self-start"
+              style={{ animation: 'fadeUp 0.8s ease-out 0.3s both' }}
+            >
+              <div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-3">
                   AI GTM<br />Strategist
                 </h1>
@@ -124,12 +124,12 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Right — Stats + CTA */}
+            {/* Right side */}
             <div
-              className="flex flex-col justify-center space-y-8"
+              className="flex flex-col justify-center space-y-8 lg:justify-self-end lg:items-end text-left lg:text-left"
               style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}
             >
-              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+              <div className="grid grid-cols-2 gap-x-8 gap-y-6 max-w-md">
                 {stats.map((stat) => (
                   <div key={stat.label}>
                     <div className="text-3xl md:text-4xl font-black text-white leading-none">
@@ -156,7 +156,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── SCROLL DOWN ARROW ── */}
+      {/* SCROLL DOWN ARROW */}
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
         style={{ animation: 'fadeIn 1s ease-out 2s both' }}
@@ -176,7 +176,7 @@ export default function Hero() {
           to { opacity: 1; }
         }
         @keyframes fadeUp {
-          from { osspacity: 0; transform: translateY(20px); }
+          from { opacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
