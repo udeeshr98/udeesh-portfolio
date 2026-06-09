@@ -22,7 +22,6 @@ export default function Hero() {
         y: (e.clientY - rect.top) / rect.height - 0.5,
       });
     };
-
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
@@ -33,18 +32,22 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen overflow-hidden bg-black pt-32 lg:pt-0"
     >
+      {/* Grid background */}
       <div
         className="absolute inset-0 bg-grid-pattern bg-grid opacity-50"
         style={{ backgroundSize: '60px 60px' }}
       />
 
+      {/* Glow blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full bg-orange-500/10 blur-[220px]" />
         <div className="absolute bottom-0 right-0 w-[900px] h-[900px] rounded-full bg-orange-600/5 blur-[180px]" />
       </div>
 
+      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy-950/50 pointer-events-none" />
 
+      {/* Big UDEESH text in background */}
       <div className="absolute top-0 left-0 right-0 overflow-visible pointer-events-none h-1/2 flex items-start justify-center pt-4 lg:pt-8">
         <div
           className="text-[18vw] md:text-[24vw] lg:text-[26vw] font-black text-white leading-none whitespace-nowrap select-none"
@@ -60,9 +63,12 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Main content */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex items-center justify-center">
         <div className="w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+            {/* Left — Text + links */}
             <div className="lg:col-span-4 flex flex-col justify-center space-y-6 lg:mt-64">
               <div style={{ animation: 'fadeUp 0.8s ease-out 0.3s both' }}>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-3">
@@ -89,21 +95,25 @@ export default function Hero() {
                 style={{ animation: 'fadeUp 0.8s ease-out 0.5s both' }}
               >
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/udeesh-r-741241168/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={18} />
                 </a>
                 <a
-                  href="#"
+                  href="mailto:udeeshr98@gmail.com"
                   className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
                   aria-label="Email"
                 >
                   <Mail size={18} />
                 </a>
                 <a
-                  href="#"
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
                   aria-label="Resume"
                 >
@@ -112,27 +122,33 @@ export default function Hero() {
               </div>
             </div>
 
+            {/* Center — Walking video replaces photo */}
             <div
               className="lg:col-span-4 flex justify-center items-center order-first lg:order-none lg:translate-y-12 lg:translate-x-12"
               style={{ animation: 'fadeUp 0.8s ease-out 0.3s both' }}
             >
               <div
-                className="relative w-[850px] h-[580px] overflow-visible"
+                className="relative w-[850px] h-[580px] overflow-hidden rounded-2xl"
                 style={{
                   transform: `perspective(1200px) rotateY(${mousePos.x * 8}deg) rotateX(${mousePos.y * -8}deg)`,
                   transition: 'transform 0.6s ease-out',
                 }}
               >
-                <img
-                  src="/logos/profile.png"
-                  alt="Udeesh"
+                <video
                   className="absolute inset-0 w-full h-full object-cover object-center scale-[1.05]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950/55 via-transparent to-transparent opacity-75" />
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/videos/uddu-video1.mp4" type="video/mp4" />
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_40%,transparent_0_42%,rgba(5,11,24,0.12)_65%,rgba(5,11,24,0.45)_100%)]" />
               </div>
             </div>
 
+            {/* Right — Stats + CTA */}
             <div className="lg:col-span-4 flex flex-col justify-center space-y-6 lg:mt-52">
               <div className="pt-28" style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}>
                 <div className="grid grid-cols-2 gap-x-6 gap-y-5 max-w-md">
@@ -158,10 +174,12 @@ export default function Hero() {
                 <ArrowRight size={18} />
               </a>
             </div>
+
           </div>
         </div>
       </div>
 
+      {/* Scroll down arrow */}
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
         style={{ animation: 'fadeIn 1s ease-out 2s both' }}
