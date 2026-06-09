@@ -30,31 +30,33 @@ export default function Hero() {
     <section
       ref={containerRef}
       id="hero"
-      className="relative min-h-screen overflow-hidden bg-black pt-32 lg:pt-0"
+      className="relative min-h-screen overflow-hidden bg-black"
     >
-      {/* Grid background */}
-      <div
-        className="absolute inset-0 bg-grid-pattern bg-grid opacity-50"
-        style={{ backgroundSize: '60px 60px' }}
-      />
 
-      {/* Glow blobs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full bg-orange-500/10 blur-[220px]" />
-        <div className="absolute bottom-0 right-0 w-[900px] h-[900px] rounded-full bg-orange-600/5 blur-[180px]" />
+      {/* ── FULL BACKGROUND VIDEO ── */}
+      <div className="absolute inset-0 z-0">
+        <video
+          className="w-full h-full object-cover object-center"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/uddu-video1.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay so text is readable over video */}
+        <div className="absolute inset-0 bg-black/60" />
+        {/* Bottom fade to black */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black to-transparent" />
       </div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-navy-950/50 pointer-events-none" />
-
-      {/* Big UDEESH text in background */}
-      <div className="absolute top-0 left-0 right-0 overflow-visible pointer-events-none h-1/2 flex items-start justify-center pt-4 lg:pt-8">
+      {/* ── UDEESH background text ── */}
+      <div className="absolute top-0 left-0 right-0 overflow-visible pointer-events-none h-1/2 flex items-start justify-center pt-4 lg:pt-8 z-10">
         <div
           className="text-[18vw] md:text-[24vw] lg:text-[26vw] font-black text-white leading-none whitespace-nowrap select-none"
           style={{
-            opacity: 0.22,
+            opacity: 0.12,
             letterSpacing: '-0.04em',
-            textShadow: '0 0 80px rgba(56, 189, 248, 0.12)',
             transform: `scale(${1 + mousePos.x * 0.02})`,
             transition: 'transform 0.6s ease-out',
           }}
@@ -63,16 +65,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Main content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex items-center justify-center">
+      {/* ── MAIN CONTENT ── */}
+      <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex items-center">
         <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center pt-24 lg:pt-0">
 
-            {/* Left — Text + links */}
-            <div className="lg:col-span-4 flex flex-col justify-center space-y-6 lg:mt-64">
+            {/* Left — Title + description + icons */}
+            <div className="flex flex-col justify-center space-y-6">
               <div style={{ animation: 'fadeUp 0.8s ease-out 0.3s both' }}>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-3">
-                  AI GTM Strategist
+                  AI GTM<br />Strategist
                 </h1>
                 <p className="text-orange-400 text-sm md:text-base font-semibold mb-4">
                   Research Analyst · Market Intelligence · GTM Strategy · AI Solutions
@@ -80,7 +82,7 @@ export default function Hero() {
               </div>
 
               <p
-                className="text-slate-300 text-base leading-relaxed max-w-md"
+                className="text-slate-200 text-base leading-relaxed max-w-md"
                 style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}
               >
                 Driving AI solution commercialization through market intelligence, competitive
@@ -98,14 +100,14 @@ export default function Hero() {
                   href="https://www.linkedin.com/in/udeesh-r-741241168/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 hover:bg-orange-500/40 transition-all duration-200 hover:scale-110"
                   aria-label="LinkedIn"
                 >
                   <Linkedin size={18} />
                 </a>
                 <a
                   href="mailto:udeeshr98@gmail.com"
-                  className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 hover:bg-orange-500/40 transition-all duration-200 hover:scale-110"
                   aria-label="Email"
                 >
                   <Mail size={18} />
@@ -114,7 +116,7 @@ export default function Hero() {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full glass border border-orange-500/20 flex items-center justify-center text-orange-400 hover:bg-orange-500/10 hover:border-orange-400/40 transition-all duration-200 hover:scale-110"
+                  className="w-10 h-10 rounded-full bg-orange-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 hover:bg-orange-500/40 transition-all duration-200 hover:scale-110"
                   aria-label="Resume"
                 >
                   <Download size={18} />
@@ -122,47 +124,22 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Center — Walking video replaces photo */}
-            <div
-              className="lg:col-span-4 flex justify-center items-center order-first lg:order-none lg:translate-y-12 lg:translate-x-12"
-              style={{ animation: 'fadeUp 0.8s ease-out 0.3s both' }}
-            >
-              <div
-                className="relative w-[850px] h-[580px] overflow-hidden rounded-2xl"
-                style={{
-                  transform: `perspective(1200px) rotateY(${mousePos.x * 8}deg) rotateX(${mousePos.y * -8}deg)`,
-                  transition: 'transform 0.6s ease-out',
-                }}
-              >
-                <video
-                  className="absolute inset-0 w-full h-full object-cover object-center scale-[1.05]"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  <source src="/videos/uddu-video1.mp4" type="video/mp4" />
-                </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_40%,transparent_0_42%,rgba(5,11,24,0.12)_65%,rgba(5,11,24,0.45)_100%)]" />
-              </div>
-            </div>
-
             {/* Right — Stats + CTA */}
-            <div className="lg:col-span-4 flex flex-col justify-center space-y-6 lg:mt-52">
-              <div className="pt-28" style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}>
-                <div className="grid grid-cols-2 gap-x-6 gap-y-5 max-w-md">
-                  {stats.map((stat) => (
-                    <div key={stat.label}>
-                      <div className="text-2xl md:text-3xl font-black text-white leading-none">
-                        {stat.value}
-                      </div>
-                      <div className="text-sm md:text-base text-slate-400 font-medium leading-tight mt-1">
-                        {stat.label}
-                      </div>
+            <div
+              className="flex flex-col justify-center space-y-8"
+              style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}
+            >
+              <div className="grid grid-cols-2 gap-x-8 gap-y-6">
+                {stats.map((stat) => (
+                  <div key={stat.label}>
+                    <div className="text-3xl md:text-4xl font-black text-white leading-none">
+                      {stat.value}
                     </div>
-                  ))}
-                </div>
+                    <div className="text-sm text-slate-300 font-medium leading-tight mt-1">
+                      {stat.label}
+                    </div>
+                  </div>
+                ))}
               </div>
 
               <a
@@ -179,14 +156,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll down arrow */}
+      {/* ── SCROLL DOWN ARROW ── */}
       <div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
         style={{ animation: 'fadeIn 1s ease-out 2s both' }}
       >
         <button
           onClick={() => document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' })}
-          className="text-slate-500 hover:text-orange-400 transition-colors p-2"
+          className="text-slate-300 hover:text-orange-400 transition-colors p-2"
           aria-label="Scroll down"
         >
           <ArrowDown size={20} className="animate-bounce" />
