@@ -76,13 +76,13 @@ export default function Hero() {
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-3">
                   AI GTM<br />Strategist
                 </h1>
-                <p className="text-orange-400 text-sm md:text-base font-semibold mb-4">
+                <p className="text-orange-400 text-base md:text-lg font-semibold mb-4">
                   Research Analyst · Market Intelligence · GTM Strategy · AI Solutions
                 </p>
               </div>
 
               <p
-                className="text-slate-200 text-base leading-relaxed max-w-md"
+                className="text-slate-200 text-lg md:text-xl leading-relaxed max-w-lg"
                 style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}
               >
                 Driving AI solution commercialization through market intelligence, competitive
@@ -135,7 +135,7 @@ export default function Hero() {
                     <div className="text-3xl md:text-4xl font-black text-white leading-none">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-slate-300 font-medium leading-tight mt-1">
+                    <div className="text-base md:text-lg italic text-slate-300 font-medium leading-tight mt-1">
                       {stat.label}
                     </div>
                   </div>
