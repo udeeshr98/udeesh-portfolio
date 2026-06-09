@@ -1,3 +1,5 @@
+Hero section: 
+
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, Download, Linkedin, Mail, ArrowRight } from 'lucide-react';
 
@@ -68,7 +70,7 @@ export default function Hero() {
       {/* ── MAIN CONTENT ── */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-12 min-h-screen flex items-center">
         <div className="w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center pt-24 lg:pt-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center pt-24 lg:pt-48">
 
             {/* Left — Title + description + icons */}
             <div className="flex flex-col justify-center space-y-6">
