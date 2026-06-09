@@ -1,5 +1,3 @@
-Hero section: 
-
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, Download, Linkedin, Mail, ArrowRight } from 'lucide-react';
 
@@ -178,7 +176,7 @@ export default function Hero() {
           to { opacity: 1; }
         }
         @keyframes fadeUp {
-          from { opacity: 0; transform: translateY(20px); }
+          from { osspacity: 0; transform: translateY(20px); }
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
