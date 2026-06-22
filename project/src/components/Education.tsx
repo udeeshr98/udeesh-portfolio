@@ -47,7 +47,7 @@ const achievements: Achievement[] = [
     icon: Award,
     metric: 'Best BDA',
     label: 'Award',
-    context: 'Recognized for generating ₹60 Lakhs in revenue at BYJU'S',
+    context: "Recognized for generating ₹60 Lakhs in revenue at BYJU'S",
   },
   {
     icon: Medal,
