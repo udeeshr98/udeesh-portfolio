@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useReveal } from '../hooks/useReveal';
-import { GraduationCap, Award, Calendar, Zap, Medal, Trophy, ChevronDown } from 'lucide-react';
+import { GraduationCap, Award, Calendar, Zap, Medal, Trophy } from 'lucide-react';
 import type { ComponentType } from 'react';
+
 
 const education = [
   {
@@ -20,38 +21,6 @@ const education = [
   },
 ];
 
-const certifications = [
-  {
-    name: 'AWS Certified AI Practitioner',
-    issuer: 'Amazon Web Services',
-    details: 'Learning description will be added here later.',
-  },
-  {
-    name: 'Product Marketing Alliance Core',
-    issuer: 'PMA',
-    details: 'Learning description will be added here later.',
-  },
-  {
-    name: 'CFA Level I',
-    issuer: 'CFA Institute',
-    details: 'Learning description will be added here later.',
-  },
-  {
-    name: 'Google Analytics Certified',
-    issuer: 'Google',
-    details: 'Learning description will be added here later.',
-  },
-  {
-    name: 'Pragmatic Marketing Certified',
-    issuer: 'Pragmatic Institute',
-    details: 'Learning description will be added here later.',
-  },
-  {
-    name: 'LangChain AI Developer',
-    issuer: 'LangChain Academy',
-    details: 'Learning description will be added here later.',
-  },
-];
 
 interface Achievement {
   icon: ComponentType<{ size?: number; className?: string }>;
@@ -59,6 +28,7 @@ interface Achievement {
   label: string;
   context: string;
 }
+
 
 const achievements: Achievement[] = [
   {
@@ -77,7 +47,7 @@ const achievements: Achievement[] = [
     icon: Award,
     metric: 'Best BDA',
     label: 'Award',
-    context: 'Recognized for generating ₹60 Lakhs in revenue at BYJU’S',
+    context: 'Recognized for generating ₹60 Lakhs in revenue at BYJU'S',
   },
   {
     icon: Medal,
@@ -87,21 +57,25 @@ const achievements: Achievement[] = [
   },
 ];
 
+
 export default function Education() {
   const sectionRef = useReveal();
   const [activeAward, setActiveAward] = useState(0);
-  const [openCert, setOpenCert] = useState<number | null>(null);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveAward((prev) => (prev + 1) % achievements.length);
     }, 3000);
 
+
     return () => clearInterval(interval);
   }, []);
 
+
   const activeItem = achievements[activeAward];
   const ActiveIcon = activeItem.icon;
+
 
   return (
     <section id="education" className="py-24 lg:py-32 relative bg-black">
@@ -118,8 +92,10 @@ export default function Education() {
               <h2 className="text-3xl md:text-4xl font-bold text-white">Academic Background</h2>
             </div>
 
+
             <div className="max-w-4xl mx-auto relative">
               <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-orange-400/60 via-orange-500/20 to-transparent" />
+
 
               <div className="space-y-10">
                 {education.map((edu) => (
@@ -130,6 +106,7 @@ export default function Education() {
                       </div>
                     </div>
 
+
                     <div className="rounded-2xl p-7 border border-orange-500/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02))] shadow-[0_0_30px_rgba(249,115,22,0.08)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_38px_rgba(249,115,22,0.12)]">
                       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
                         <div>
@@ -138,6 +115,7 @@ export default function Education() {
                           </h3>
                           <p className="text-orange-300 text-sm font-medium">{edu.institution}</p>
                         </div>
+
 
                         <div className="flex flex-wrap items-center gap-2 md:justify-end">
                           <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-white/5 border border-white/10 text-slate-300">
@@ -149,6 +127,7 @@ export default function Education() {
                           </span>
                         </div>
                       </div>
+
 
                       <div className="mt-5 pt-4 border-t border-white/5">
                         <div className="inline-flex items-start gap-2.5 rounded-xl bg-orange-500/10 border border-orange-400/20 px-4 py-3 text-sm text-orange-200">
@@ -163,8 +142,9 @@ export default function Education() {
             </div>
           </div>
 
+
           {/* Awards */}
-          <div className="mb-20">
+          <div>
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 text-orange-400 text-xs font-semibold tracking-widest uppercase mb-4">
                 <span className="w-8 h-px bg-orange-400" />
@@ -179,6 +159,7 @@ export default function Education() {
               </p>
             </div>
 
+
             <div className="rounded-[32px] border border-orange-500/10 bg-black px-6 py-10 md:px-10 lg:px-12 overflow-hidden">
               <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-10 lg:gap-12 items-center">
                 <div className="flex items-center justify-center">
@@ -189,6 +170,7 @@ export default function Education() {
                   />
                 </div>
 
+
                 <div className="relative min-h-[320px] flex items-center justify-center">
                   <div
                     key={activeAward}
@@ -197,6 +179,7 @@ export default function Education() {
                     <div className="w-11 h-11 rounded-2xl bg-orange-500/15 border border-orange-300/20 flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(249,115,22,0.12)]">
                       <ActiveIcon size={18} className="text-orange-300" />
                     </div>
+
 
                     <div className="text-2xl font-bold text-white leading-tight mb-1">
                       {activeItem.metric}
@@ -213,68 +196,6 @@ export default function Education() {
             </div>
           </div>
 
-          {/* Certifications */}
-          <div>
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-2 text-orange-400 text-xs font-semibold tracking-widest uppercase mb-4">
-                <span className="w-8 h-px bg-orange-400" />
-                Certifications
-                <span className="w-8 h-px bg-orange-400" />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-white">Professional Certifications</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-              {certifications.map((cert, index) => {
-                const isOpen = openCert === index;
-
-                return (
-                  <div
-                    key={cert.name}
-                    className="rounded-2xl border border-orange-500/15 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02))] shadow-[0_0_28px_rgba(249,115,22,0.07)] backdrop-blur-sm overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_38px_rgba(249,115,22,0.12)]"
-                  >
-                    <div className="p-5">
-                      <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-xl bg-orange-500 text-white text-sm font-bold flex items-center justify-center shadow-[0_0_20px_rgba(249,115,22,0.18)] flex-shrink-0">
-                          {index + 1}
-                        </div>
-
-                        <div className="min-w-0">
-                          <h3 className="text-sm md:text-base font-semibold text-white leading-tight">
-                            {cert.name}
-                          </h3>
-                          <p className="text-sm text-orange-300 mt-1">{cert.issuer}</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={() => setOpenCert(isOpen ? null : index)}
-                      className="w-full border-t border-orange-500/10 px-5 py-3 flex items-center justify-center text-orange-200 hover:bg-orange-500/5 transition-colors duration-300"
-                    >
-                      <ChevronDown
-                        size={16}
-                        className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-                      />
-                    </button>
-
-                    <div
-                      className={`grid transition-all duration-300 ease-in-out ${
-                        isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
-                      }`}
-                    >
-                      <div className="overflow-hidden">
-                        <div className="px-5 pb-5 pt-1 text-sm text-slate-300 leading-relaxed border-t border-orange-500/10">
-                          {cert.details}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
 
           <style>{`
             @keyframes awardFade {
@@ -287,6 +208,7 @@ export default function Education() {
                 transform: translateY(0) scale(1);
               }
             }
+
 
             .animate-awardFade {
               animation: awardFade 0.6s ease-out;
