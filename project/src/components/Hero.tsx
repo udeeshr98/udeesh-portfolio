@@ -3,10 +3,10 @@ import { ArrowDown, Download, Linkedin, Mail, ArrowRight } from 'lucide-react';
 
 const stats = [
   { value: '4+', label: 'Years Experience' },
-  { value: '250+', label: 'Market Intel Reports' },
-  { value: '20+', label: 'Agentic AI GTM Projects' },
-  { value: '10+', label: 'Enterprise Proposals' },
-  { value: '25+', label: 'AI Use Cases Identified' },
+  { value: '250+', label: 'Intel Reports on Executive Strategy & Insight Deliverables' },
+  { value: '20+', label: 'AI Adoption & GTM Initiatives' },
+  { value: '10+', label: 'Enterprise Solution Workshops' },
+  { value: '50+', label: 'Customer Discovery & Advisory Engagements' },
 ];
 
 export default function Hero() {
