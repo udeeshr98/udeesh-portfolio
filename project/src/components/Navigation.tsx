@@ -44,7 +44,6 @@ export default function Navigation() {
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        {/* Logo */}
         <a
           href="#"
           className="text-sm font-bold text-orange-400 tracking-wide hover:text-orange-300 transition-colors"
@@ -52,7 +51,6 @@ export default function Navigation() {
           AI GTM Strategist
         </a>
 
-        {/* Desktop links */}
         <div className="hidden md:flex items-center gap-1 bg-white/[0.06] border border-white/10 rounded-2xl px-3 py-2">
           {navLinks.map((link) => (
             <a
@@ -69,9 +67,8 @@ export default function Navigation() {
           ))}
         </div>
 
-        {/* Resume button */}
         <a
-          href="/resume.pdf"
+          href="/Udeesh%20Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-xl bg-orange-500 hover:bg-orange-400 text-white text-sm font-semibold transition-all duration-200 shadow-[0_0_20px_rgba(249,115,22,0.30)] hover:shadow-[0_0_28px_rgba(249,115,22,0.40)] hover:-translate-y-0.5"
@@ -80,7 +77,6 @@ export default function Navigation() {
           Resume
         </a>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden w-9 h-9 flex flex-col items-center justify-center gap-1.5"
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -92,7 +88,6 @@ export default function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden ${
           menuOpen ? 'max-h-96 border-t border-orange-500/10' : 'max-h-0'
@@ -114,7 +109,7 @@ export default function Navigation() {
             </a>
           ))}
           <a
-            href="/resume.pdf"
+            href="/Udeesh%20Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-2 flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-400 text-white text-sm font-semibold transition-all duration-200"
