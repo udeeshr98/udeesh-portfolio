@@ -116,23 +116,23 @@ export default function Contact() {
                   {[
                     {
                       icon: CheckCircle,
-                      text: 'Market Intelligence & Competitive Research',
+                      text: 'Client Discovery & Strategic Advisory',
                       color: 'text-orange-300',
                     },
-                    { icon: CheckCircle, text: 'AI Strategic Advisory', color: 'text-orange-300' },
-                    { icon: CheckCircle, text: 'GTM Consulting', color: 'text-orange-300' },
-                    { icon: CheckCircle, text: 'Sales Enablement', color: 'text-orange-300' },
+                    { icon: CheckCircle, text: 'AI Solution Strategy & Commercialization', color: 'text-orange-300' },
+                    { icon: CheckCircle, text: 'Market Intelligence & Competitive Insights', color: 'text-orange-300' },
+                    { icon: CheckCircle, text: 'GTM Planning & Sales Enablement', color: 'text-orange-300' },
                     {
                       icon: CheckCircle,
-                      text: 'Account Mining & Opportunity Discovery',
+                      text: 'Customer Adoption & Enablement',
                       color: 'text-orange-300',
                     },
                     {
                       icon: CheckCircle,
-                      text: 'Presales & Product Marketing Support',
+                      text: 'Presales, Collateral & Case Study Development',
                       color: 'text-orange-300',
                     },
-                    { icon: Clock, text: 'Full-Time Roles', color: 'text-amber-300' },
+                    { icon: Clock, text: 'Full-Time Roles & Strategic Opportunities', color: 'text-amber-300' },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (
