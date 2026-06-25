@@ -228,14 +228,14 @@ export default function Projects() {
           <div className="mt-28 text-center mb-16">
             <div className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#F97316' }}>
               <span className="w-8 h-px" style={{ backgroundColor: '#F97316' }} />
-              GTM Driven Agentic AI Solutions &amp; Commercialization Initiatives
+              AI SOLUTION STRATEGY, COMMERCIALIZATION &amp; ADOPTION
               <span className="w-8 h-px" style={{ backgroundColor: '#F97316' }} />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white">
-              Driving Market Activation &amp; Commercialization
+              Bringing AI Solutions from Discovery to Market
             </h2>
             <p className="text-slate-400 mt-3 max-w-xl mx-auto">
-              Strategic initiatives across Agentic AI, Data &amp; AI offerings, and enterprise adoption.
+              Leading client discovery, solution shaping, cross-functional coordination, commercialization assets, and adoption enablement to turn AI use cases into market-ready business outcomes
             </p>
           </div>
 
