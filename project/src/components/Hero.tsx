@@ -74,10 +74,10 @@ export default function Hero() {
             >
               <div>
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-none mb-3">
-                  AI GTM<br />Strategist
+                  Strategy Consultant &<br />Customer Advisory Professional
                 </h1>
                 <p className="text-orange-400 text-base md:text-lg font-semibold mb-4">
-                  Research Analyst · Market Intelligence · GTM Strategy · AI Solutions
+                  Customer Success · Product Adoption · Strategy Consulting · AI GTM & Commercialization
                 </p>
               </div>
 
@@ -85,11 +85,7 @@ export default function Hero() {
                 className="text-slate-200 text-lg md:text-xl leading-relaxed max-w-lg"
                 style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}
               >
-                Driving AI solution commercialization through market intelligence, competitive
-                strategy, and data-driven go-to-market execution. Experienced in translating AI
-                capabilities into scalable business value, enabling organizations to identify
-                growth opportunities, accelerate enterprise AI adoption, and achieve measurable
-                business outcomes.
+                Helping organizations realize measurable business value through strategic consulting, customer advisory, and AI-driven transformation. Experienced in translating complex business challenges into customer adoption strategies, executive recommendations, and scalable AI solutions that accelerate technology adoption and long-term growth..
               </p>
 
               <div
