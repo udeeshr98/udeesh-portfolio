@@ -1,10 +1,6 @@
-import { Linkedin, Mail, ArrowUp, Play } from 'lucide-react';
+import { Linkedin, Mail, ArrowUp } from 'lucide-react';
 
-interface FooterProps {
-  onWatchIntro: () => void;
-}
-
-export default function Footer({ onWatchIntro }: FooterProps) {
+export default function Footer() {
   const scrollTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (
@@ -20,14 +16,6 @@ export default function Footer({ onWatchIntro }: FooterProps) {
             </div>
 
             <div className="flex items-center gap-4 flex-wrap justify-center">
-              <button
-                onClick={onWatchIntro}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-orange-500 text-white text-sm font-semibold hover:bg-orange-400 transition-all duration-200 shadow-[0_0_18px_rgba(249,115,22,0.35)]"
-              >
-                <Play size={14} />
-                Watch Intro Again
-              </button>
-
               <a
                 href="mailto:udeeshr98@gmail.com"
                 className="w-10 h-10 rounded-xl bg-orange-500 flex items-center justify-center text-white hover:bg-orange-400 transition-all duration-200 shadow-[0_0_18px_rgba(249,115,22,0.35)]"
