@@ -15,14 +15,14 @@ const skillGroups: SkillGroup[] = [
   {
     category: 'Core Competencies',
     skills: [
-      { name: 'Go-to-Market (GTM) Strategy', level: 97 },
-      { name: 'AI Solution Commercialization', level: 96 },
-      { name: 'Market Intelligence & Competitive Analysis', level: 99 },
-      { name: 'Presales & Proposal Development', level: 90 },
+      { name: 'Product Adoption & Customer Enablement', level: 97 },
+      { name: 'Discovery Workshops & Needs Analysis', level: 96 },
+      { name: 'Executive Stakeholder Management & Customer Advisory', level: 99 },
+      { name: 'Market Intelligence & Competitive Insights', level: 90 },
       { name: 'Account Mining & Opportunity Discovery', level: 95 },
       { name: 'Sales Enablement & Capability Building', level: 90 },
-      { name: 'AI Thought Leadership', level: 85 },
-      { name: 'Executive Stakeholder Management', level: 90 },
+      { name: 'AI Thought Leadership & AI Strategic Advisory', level: 85 },
+      { name: 'GTM Strategy & Solution Commercialization', level: 90 },
     ],
   },
 ];
