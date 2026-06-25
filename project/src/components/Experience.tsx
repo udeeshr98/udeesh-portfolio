@@ -31,21 +31,22 @@ const roles: Role[] = [
     ],
   },
   {
-    title: 'Senior Business Development Associate',
-    company: "BYJU'S (Think & Learn Pvt. Ltd.)",
-    period: 'June 2019 — May 2021',
-    location: 'Bangalore, India',
-    logo: '/logos/byjus.png',
-    description:
-      'Strengthened client relationships and supported sales execution through market analysis, CRM tracking, and promotional enablement.',
-    highlights: [
-      'Built client relationships that expanded market reach and improved customer engagement.',
-      'Created sales and promotional materials in collaboration with marketing teams.',
-      'Analyzed market trends and consumer behaviour to support business decisions.',
-      'Managed leads in LeadSquared CRM and tracked engagement through the sales cycle.',
-    ],
-  },
-];
+  title: 'Senior Business Development Associate',
+  company: "BYJU'S (Think & Learn Pvt. Ltd.)",
+  period: 'June 2019 — May 2021',
+  location: 'Bangalore, India',
+  logo: '/logos/byjus.png',
+  description:
+    "Managed the end-to-end customer lifecycle for 50+ customers per month, leading consultative discovery, product demonstrations, onboarding, and post-sales engagement to understand customer needs, recommended tailored learning solutions, and achieve an average conversion rate of ~60%.",
+  highlights: [
+    "Delivered personalized product demonstrations that communicated product value, addressed customer concerns, and enabled informed purchasing decisions.",
+    "Facilitated onboarding and customer enablement sessions by sharing platform best practices, usage governance, and adoption techniques, encouraging key users to champion product adoption and maximize long-term value.",
+    "Facilitated customer onboarding and enablement sessions by educating users on platform best practices, effective usage governance, and adoption techniques while encouraging key users to champion product adoption, helping customers maximize value and long-term engagement.",
+    "Strengthening customer satisfaction & retention through proactive bi-weekly follow-ups, resolving product usage challenges, driving feature adoption, and serving as a trusted advisor throughout the customer journey.",
+    "Leveraged Lead Squared CRM manages customer interactions, track engagement across the customer lifecycle, maintain accurate account records, and support data-driven sales and customer engagement activities.",
+    "Collaborated with marketing teams to create targeted customer communication materials while analyzing customer feedback, market trends, and buying behavior to improve customer engagement and support development initiatives.",
+  ],
+},
 
 export default function Experience() {
   const sectionRef = useReveal();
