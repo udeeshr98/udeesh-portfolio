@@ -5,23 +5,23 @@ import { Target, TrendingUp, Users, Lightbulb } from 'lucide-react';
 const traits = [
   {
     icon: Target,
-    title: 'Market Intelligence',
-    desc: 'Conducting competitive analysis, industry research, and market watch reporting.',
+    title: 'Customer Advisory & Success',
+    desc: 'Driving consultative discovery, stakeholder engagement, product adoption, and customer success through strategic guidance and value-driven recommendations.',
   },
   {
     icon: TrendingUp,
-    title: 'GTM Strategy',
-    desc: 'Driving go-to-market planning for Data & AI, Databricks, Snowflake, and Product Analytics.',
+    title: 'Product Adoption',
+    desc: 'Accelerating customer onboarding, enablement, adoption, and business value realization through structured adoption strategies.',
   },
   {
     icon: Users,
-    title: 'AI Solutions & Commercialization',
-    desc: 'Supporting Agentic AI / Custom LLM solution positioning, sales readiness, and adoption.',
+    title: 'GTM Strategy',
+    desc: 'Driving go-to-market strategy and commercialization for Agentic AI solutions and enterprise Data & AI platforms including Databricks, Snowflake, and Product Analytics.',
   },
   {
     icon: Lightbulb,
-    title: 'Pre-Sales & Enablement',
-    desc: 'Building proposals, battlecards, sales decks, and training material for enterprise teams.',
+    title: 'Market Intelligence',
+    desc: 'Delivering market intelligence through competitive analysis, industry research, and strategic insights that inform business growth and customer strategy.',
   },
 ];
 
@@ -58,19 +58,13 @@ export default function About() {
 
               <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
-                  I'm a GTM strategist and research analyst specializing in enterprise AI adoption,
-                  with over ~4 years of experience helping technology companies navigate the intersection
-                  of cutting-edge AI capabilities and real-world business outcomes.
+                  I'm a Strategy Consulting and Customer Advisory professional with ~4 years of experience helping organizations solve complex business challenges through consultative discovery, AI solution strategy, and customer adoption. I partner with business leaders, technical teams, and executive stakeholders to translate customer needs into actionable recommendations that drive measurable business value.
                 </p>
                 <p>
-                  My work spans market intelligence, competitive positioning, sales enablement, and
-                  agentic AI implementation — bringing a rare blend of technical fluency and commercial
-                  acuity that accelerates go-to-market success.
+                  My experience spans customer discovery, product adoption, executive stakeholder engagement, AI commercialization, and strategic consulting. I enjoy simplifying complex business problems into practical adoption roadmaps, enabling customers to maximize value from technology while supporting long-term business growth.
                 </p>
                 <p>
-                  At Indium Software, I work at the intersection of market intelligence, go-to-market strategy,
-                  and AI solution commercialization. I help build strategic offerings, support enterprise pre-sales,
-                  and turn market insights into business growth.
+                  At Indium Software, I work at the intersection of market intelligence, strategy consulting, AI go-to-market, and solution commercialization. I collaborate with business, sales, consulting, and engineering teams to build customer-centric AI offerings, develop adoption roadmaps, support enterprise pre-sales, and deliver executive recommendations that translate market insights into business growth. Previously at BYJU'S, I managed the end-to-end customer lifecycle—from consultative discovery and product demonstrations to onboarding, customer education, and post-sales engagement—building a strong foundation in customer advisory, product adoption, and relationship management.
                 </p>
               </div>
 
