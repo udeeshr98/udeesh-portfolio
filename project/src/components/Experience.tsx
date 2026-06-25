@@ -15,21 +15,25 @@ interface Role {
 
 const roles: Role[] = [
   {
-    title: 'Research Analyst | Market Intelligence · AI Solutions GTM Strategy & Commercialization',
-    company: 'Indium Software (Strategy Office)',
-    period: 'July 2024 — Present',
-    location: 'Chennai, India',
-    logo: '/logos/indium.png',
-    current: true,
-    description:
-      'Leading market intelligence and AI commercialization initiatives that shape strategic growth for Data & AI offerings and enterprise opportunities.',
-    highlights: [
-      'Built monthly market intelligence and competitive insights for 50+ stakeholders, helping identify growth opportunities across 20+ target accounts.',
-      'Developed a 5,000+ prospect database using ZoomInfo, Apollo.io, and Lusha to support targeted outreach and account penetration.',
-      'Drove GTM performance reviews across 100+ Data & AI projects and created 30-60-90-day growth plans for service-line expansion.',
-      'Supported enterprise AI pre-sales and RFP responses while contributing to AI thought leadership through whitepapers, blogs, and conference support.',
-    ],
-  },
+  title: 'Analyst - Strategy Consulting & AI GTM Professional with expertise in Customer Success principles, Product Adoption, and Strategic Advisory',
+  company: 'Indium Software (Strategy Office)',
+  period: 'July 2024 — Present',
+  location: 'Chennai, India',
+  logo: '/logos/indium.png',
+  current: true,
+  description:
+    'Served as a strategic advisor to clients and leadership teams, conducting market intelligence, competitive benchmarking, and discovery workshops to identify business needs and delivering actionable recommendations for AI adoption.',
+  highlights: [
+    'Led customer discovery engagements, facilitating structured discovery sessions to understand business objectives, identify challenges, and align AI solution recommendations with customer requirements.',
+    'Collaborated with business, technical, and leadership teams to develop tailored 30-60-90-day AI adoption road maps for enterprise customers, accelerating customer time-to-value and identifying expansion opportunities.',
+    'Designed product adoption enablement programs for enterprise SaaS platforms (Databricks, Snowflake), creating playbooks, onboarding assets, and best-practice guides that accelerated internal and customer readiness for solution adoption.',
+    'Developed the AI Opportunity Radar framework to identify high-value AI use cases across industries, enabling business stakeholders to prioritize transformation initiatives and align solution recommendations with strategic business objectives.',
+    'Presented executive-ready market and competitive intelligence to C-suite leaders and 50+ cross-functional stakeholders through 15+ monthly insight reports, enabling informed decision-making on business priorities, AI strategy, and growth initiatives.',
+    'Monitored account health across 20+ enterprise accounts, producing actionable insights that surfaced at-risk accounts, informed proactive intervention strategies, strengthened customer health, and drove solution growth within existing relationships.',
+    'Fostered customer advocacy by developing customer-facing thought leadership and sales enablement assets — including whitepapers, case studies, solution narratives, and training collateral — that strengthened customer engagement, empowered internal teams to champion AI solutions, and accelerated customer adoption.',
+    'Mentored junior consultants on research methodologies, structured problem-solving, and client engagement best practices — raising team capability and quality of client-facing deliverables.',
+  ],
+},
   {
   title: 'Senior Business Development Associate',
   company: "BYJU'S (Think & Learn Pvt. Ltd.)",
