@@ -51,6 +51,7 @@ const roles: Role[] = [
     "Collaborated with marketing teams to create targeted customer communication materials while analyzing customer feedback, market trends, and buying behavior to improve customer engagement and support development initiatives.",
   ],
 },
+];
 
 export default function Experience() {
   const sectionRef = useReveal();
@@ -156,7 +157,7 @@ export default function Experience() {
 
                   <div
                     className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                      isExpanded ? 'max-h-[700px] opacity-100' : 'max-h-0 opacity-0'
+                      isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
                   >
                     <div className="px-5 md:px-6 pb-5 md:pb-6 pt-0">
