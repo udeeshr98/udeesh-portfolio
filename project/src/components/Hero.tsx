@@ -73,7 +73,7 @@ export default function Hero() {
               style={{ animation: 'fadeUp 0.8s ease-out 0.3s both' }}
             >
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-3">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-3">
   Strategy &amp; Growth Consultant | <br />
   Customer Success &amp; Advisory Professional
 </h1>
