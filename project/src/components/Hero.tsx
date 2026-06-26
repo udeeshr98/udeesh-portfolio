@@ -74,7 +74,7 @@ export default function Hero() {
             >
               <div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-3">
-  Strategy &amp; Growth Consultant <br />
+  Strategy &amp; Growth Consultant | <br />
   Customer Success &amp; Advisory Professional
 </h1>
                 <p className="text-orange-400 text-base md:text-lg font-semibold mb-4">
