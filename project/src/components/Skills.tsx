@@ -15,9 +15,9 @@ const skillGroups: SkillGroup[] = [
   {
     category: 'Core Competencies',
     skills: [
-      { name: 'Product Adoption & Customer Enablement', level: 97 },
+      { name: 'Product Adoption & Customer Lifecycle Management', level: 97 },
       { name: 'Discovery Workshops & Needs Analysis', level: 96 },
-      { name: 'Executive Stakeholder Management & Customer Advisory', level: 99 },
+      { name: 'Executive Stakeholder Management & Customer Engagement/Advisory', level: 99 },
       { name: 'Market Intelligence & Competitive Insights', level: 90 },
       { name: 'Account Mining & Opportunity Discovery', level: 95 },
       { name: 'Sales Enablement & Capability Building', level: 90 },
