@@ -75,7 +75,7 @@ export default function Hero() {
               <div>
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-3">
   Sales Strategy Analyst| <br />
-  Customer Success, Advisory  &amp; GTM Professional
+  Growth, GTM &amp; Customer Success Professional
 </h1>
                 <p className="text-orange-400 text-base md:text-lg font-semibold mb-4">
                   Customer Success · Product Adoption · Strategy Consulting · AI GTM & Commercialization
