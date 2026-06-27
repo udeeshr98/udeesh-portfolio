@@ -5,18 +5,18 @@ import { Target, TrendingUp, Users, Lightbulb } from 'lucide-react';
 const traits = [
   {
     icon: Target,
-    title: 'Customer Advisory & Success',
-    desc: 'Driving consultative discovery, stakeholder engagement, product adoption, and customer success through strategic guidance and value-driven recommendations.',
+    title: 'Sales Strategy',
+    desc: 'Identifying high-probability opportunities, shaping sales plays, and supporting pipeline progression across target accounts.',
   },
   {
     icon: TrendingUp,
-    title: 'Product Adoption',
-    desc: 'Accelerating customer onboarding, enablement, adoption, and business value realization through structured adoption strategies.',
+    title: 'Customer Success & Product Adoption',
+    desc: 'Driving consultative discovery, stakeholder engagement, customer onboarding, enablement, and product adoption to maximize business value through strategic, customer-centric guidance.',
   },
   {
     icon: Users,
-    title: 'GTM Strategy',
-    desc: 'Driving go-to-market strategy and commercialization for Agentic AI solutions and enterprise Data & AI platforms including Databricks, Snowflake, and Product Analytics.',
+    title: 'GTM & Growth Strategy',
+    desc: 'Driving go-to-market motions, growth initiatives, and solution commercialization across Data & AI offerings',
   },
   {
     icon: Lightbulb,
