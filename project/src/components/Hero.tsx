@@ -86,7 +86,7 @@ export default function Hero() {
                 className="text-slate-200 text-lg md:text-xl leading-relaxed max-w-lg"
                 style={{ animation: 'fadeUp 0.8s ease-out 0.4s both' }}
               >
-                Helping organizations realize measurable business value through strategic consulting, customer advisory, and AI-driven transformation. Experienced in translating complex business challenges into customer adoption strategies, executive recommendations, and scalable AI solutions that accelerate technology adoption and long-term growth..
+                Helping organizations realize measurable business value through strategic consulting, customer advisory, and AI-driven transformation. Experienced in translating complex business challenges into customer adoption strategies, executive recommendations, and scalable AI solutions that accelerate technology adoption and long-term growth.
               </p>
 
               <div
