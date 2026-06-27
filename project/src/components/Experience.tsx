@@ -15,7 +15,7 @@ interface Role {
 
 const roles: Role[] = [
   {
-  title: 'Analyst - Strategy Consulting & AI GTM Professional with expertise in Customer Success principles, Product Adoption, and Strategic Advisory',
+  title: 'Analyst - Strategy Consulting & AI GTM professional with expertise in Growth, Sales Strategy, Customer Success, Product Adoption',
   company: 'Indium Software (Strategy Office)',
   period: 'July 2024 — Present',
   location: 'Chennai, India',
