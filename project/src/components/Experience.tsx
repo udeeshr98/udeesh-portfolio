@@ -15,7 +15,7 @@ interface Role {
 
 const roles: Role[] = [
   {
-  title: 'Analyst - Strategy Consulting & AI GTM professional with expertise in Growth, Sales Strategy, Customer Success, Product Adoption',
+  title: 'Analyst - Sales Strategy, GTM & Growth Professional',
   company: 'Indium Software (Strategy Office)',
   period: 'July 2024 — Present',
   location: 'Chennai, India',
@@ -35,7 +35,7 @@ const roles: Role[] = [
   ],
 },
   {
-  title: 'Senior Business Development Associate',
+  title: 'Senior Business Development Associate - Customer Success, Product Adoption & Advisory Specialist',
   company: "BYJU'S (Think & Learn Pvt. Ltd.)",
   period: 'June 2019 — May 2021',
   location: 'Bangalore, India',
