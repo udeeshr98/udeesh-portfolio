@@ -58,13 +58,13 @@ export default function About() {
 
               <div className="space-y-4 text-slate-400 leading-relaxed">
                 <p>
-                  I'm a Strategy Consulting and Customer Advisory professional with ~4 years of experience helping organizations solve complex business challenges through consultative discovery, AI solution strategy, and customer adoption. I partner with business leaders, technical teams, and executive stakeholders to translate customer needs into actionable recommendations that drive measurable business value.
+                  I’m a Sales Strategy and Growth professional with ~4 years of experience helping organizations identify opportunities, shape go-to-market strategy, and translate market and customer insights into actionable business outcomes. I work across market intelligence, sales strategy, customer success, and product adoption to help teams prioritize the right opportunities and drive measurable growth.
                 </p>
                 <p>
-                  My experience spans customer discovery, product adoption, executive stakeholder engagement, AI commercialization, and strategic consulting. I enjoy simplifying complex business problems into practical adoption roadmaps, enabling customers to maximize value from technology while supporting long-term business growth.
+                  My experience spans strategic account planning, competitor intelligence, customer discovery, product adoption, executive stakeholder engagement, GTM execution, and post-sales adoption support. I enjoy simplifying complex business problems into practical adoption roadmaps, enabling customers to maximize value from technology while supporting long-term business growth.
                 </p>
                 <p>
-                  At Indium Software, I work at the intersection of market intelligence, strategy consulting, AI go-to-market, and solution commercialization. I collaborate with business, sales, consulting, and engineering teams to build customer-centric AI offerings, develop adoption roadmaps, support enterprise pre-sales, and deliver executive recommendations that translate market insights into business growth. Previously at BYJU'S, I managed the end-to-end customer lifecycle—from consultative discovery and product demonstrations to onboarding, customer education, and post-sales engagement—building a strong foundation in customer advisory, product adoption, and relationship management.
+                  At Indium Software, I work at the intersection of market intelligence, GTM strategy, and solution commercialization, partnering with business, sales, consulting, and engineering teams to build customer-centric offerings, support enterprise pre-sales, and develop growth roadmaps. Previously at BYJU’S, I managed the end-to-end customer lifecycle from discovery and product demonstrations to onboarding, customer education, and post-sales engagement, building a strong foundation in customer success, adoption, and relationship management.
                 </p>
               </div>
 
